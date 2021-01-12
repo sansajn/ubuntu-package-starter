@@ -1,0 +1,20 @@
+Source: hello-sample
+Section: utils
+Priority: optional
+Maintainer: Adam Hlavatovic <adam.hlavatovic@protonmail.ch>
+Build-Depends: 
+	debhelper (>= 10), 
+	git, 
+	scons,
+	pkg-config
+Standards-Version: 4.0.0
+Homepage: https://github.com/sansajn/ubuntu-package-starter
+
+Package: hello-sample
+Architecture: any
+Multi-Arch: foreign
+Depends: 
+	${shlibs:Depends}, 
+	${misc:Depends} 
+Description: Ubuntu hello-sample package.
+ Read [Building Ubuntu (.deb) package](https://github.com/sansajn/ubuntu-package-starter) article for further package information. 

@@ -1,0 +1,25 @@
+#!/usr/bin/make -f
+
+PKG_NAME=hello-sample
+PKG_DST=`pwd`/debian/${PKG_NAME}/opt/${PKG_NAME}
+
+%:
+	dh $@
+
+override_dh_auto_clean:
+	scons -c
+
+override_dh_auto_configure:
+	# ...
+	
+override_dh_auto_build:
+	scons -j8
+
+override_dh_auto_install:
+	install -D -m 0755 hello ${PKG_DST}/hello
+	
+override_dh_usrlocal:
+	# do nothing ...
+
+override_dh_auto_test:
+	# ...
